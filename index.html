@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Wordle PPY</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <span id="intentos"></span>
+    <hr>
+
+    <div class="title">
+        <span><span id="W">W</span><span id="o">o</span><span id="r">r</span><span id="d">d</span><span
+                id="l">l</span><span id="e">e</span> <span id="P">P</span><span id="P2">P</span><span
+                id="Y">Y</span></span>
+    </div>
+    <input type="text" id="guess-input">
+    <button id="guess-button">Intentar</button>
+
+    <div id="grid"></div>
+    <p id="guesses">
+    <div id='grid'>
+
+    </div>
+
+    <div id="game-over">
+        <h1>Lo Siento!</h1>
+        <p>Terminaron las vidas</p>
+        <p>La palabra era:</p>
+        <span id="palabra"></span>
+    </div>
+
+    <div id="win-game">
+        <h1>Felicidades!</h1>
+        <p>Haz Ganado!</p>
+        <p>La palabra era:</p>
+        <span id="palabra2"></span>
+    </div>
+</body>
+
+</html>
