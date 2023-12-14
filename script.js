@@ -1,7 +1,19 @@
-let intentos = 6;
-let diccionario = ['CUCARACHA', 'DORMIR', 'BAILAR', 'DESAYUNAR']
 
-const palabra = diccionario[Math.floor(Math.random() * diccionario.length)];
+//const palabra = diccionario[Math.floor(Math.random() * diccionario.length)];
+//let diccionario = ['CUCARACHA', 'DORMIR', 'BAILAR', 'DESAYUNAR']
+let intentos = 6;
+let palabra;
+
+//UTILIZACION DEL API
+ fetch('https://random-word-api.herokuapp.com/word?length=5&&number=1&&lang=es')
+ .then(response=> response.json())
+ .then(response=> {
+    console.log(response)
+    palabra=response[0].toUpperCase()
+ })
+.catch(err=>console.error(err));
+
+
 
 window.addEventListener('load', init)
 
