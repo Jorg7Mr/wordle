@@ -5,13 +5,13 @@ let intentos = 6;
 let palabra;
 
 //UTILIZACION DEL API
- fetch('https://random-word-api.herokuapp.com/word?length=5&&number=1&&lang=es')
- .then(response=> response.json())
- .then(response=> {
-    console.log(response)
-    palabra=response[0].toUpperCase()
- })
-.catch(err=>console.error(err));
+fetch('https://random-word-api.herokuapp.com/word?length=5&&number=1&&lang=es')
+    .then(response => response.json())
+    .then(response => {
+        console.log(response)
+        palabra = response[0].toUpperCase()
+    })
+    .catch(err => console.error(err));
 
 
 
@@ -27,13 +27,14 @@ button.addEventListener("click", intentar);
 
 function actualizarVidas() {
     const spanVidas = document.getElementById("intentos");
-    spanVidas.innerHTML = ''; 
+    spanVidas.innerHTML = '';
 
     for (let i = 0; i < intentos; i++) {
         const corazonImg = document.createElement('img');
-        corazonImg.src = './img/corazon.png'; 
+        corazonImg.src = './img/corazon.png';
         corazonImg.classList.add('corazon');
-        spanVidas.appendChild(corazonImg); 
+        corazonImg.style.padding = '5px';
+        spanVidas.appendChild(corazonImg);
     }
 }
 function leerIntento() {
@@ -63,7 +64,7 @@ function intentar() {
 
     for (let i = 0; i < palabra.length; i++) {
         if (INTENTO[i] === undefined) {
-            nuevoIntento += " "; 
+            nuevoIntento += " ";
         } else {
             nuevoIntento += INTENTO[i];
         }
@@ -76,7 +77,7 @@ function intentar() {
     for (let i in palabra) {
         const SPAN = document.createElement('span');
         SPAN.className = 'letter';
-        if (INTENTO[i] === palabra[i]) { 
+        if (INTENTO[i] === palabra[i]) {
             SPAN.innerHTML = INTENTO[i];
             SPAN.style.backgroundColor = 'green';
         } else if (palabra.includes(INTENTO[i])) {
